@@ -5,7 +5,14 @@ using Xunit;
 
 namespace TodoIt.Tests.Models
 {
-    class PersonTests
+    public class PersonTests
     {
+        
+        [Fact]
+        public void GivenIdFirstnameLastname_ReturnsInSentence()
+        {
+            
+        }
+
     }
 }
