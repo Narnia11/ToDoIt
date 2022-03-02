@@ -6,15 +6,15 @@ namespace ToDoIt.Models
 {
     class Person
     {
-        private readonly int _Id;   //field
+        private readonly int _id;   //field
         private string _firstName;  //field 
         private string _lastName;   //field
 
-        public Person(int Id, string firstname, string lastname)                //costructor
+        public Person(int id, string firstName, string lastName)                //costructor
         {
-            _Id = Id;
-            _firstName = firstname;
-            _lastName = lastname;      
+            _id = id;
+            _firstName = firstName;
+            _lastName = lastName;      
         }
         public string firstName                //properties to read the first name
         {
@@ -43,17 +43,17 @@ namespace ToDoIt.Models
                 _lastName = value;
             }
         }
-        public int Id                //properties to read the Id
+        public int id                //properties to read the id
         {
             get
             {
-                return _Id;
+                return _id;
             }
          
         }
             public override string ToString()
         {
-            return "Id: " + Id + "belongs to " + firstName + lastName;
+            return "Id: " + id + "belongs to " + firstName + lastName;
         }
     }
 
