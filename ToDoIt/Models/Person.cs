@@ -23,9 +23,10 @@ namespace ToDoIt.Models
                 return _firstName;
             }
             set
-            {               
-                if(value == null || value.Contains(" "))                //Prevent firstName from saving Empty
-                    throw new Exception("Please specify first name!");
+            {
+               
+                if(string.IsNullOrWhiteSpace(value))                //Prevent firstName from saving Empty
+                    throw new ArgumentException("Please specify first name!");
                 _firstName = value;
             }
         }
@@ -37,21 +38,18 @@ namespace ToDoIt.Models
             }
             set
             {
-                if (value == null || value.Contains(" "))                //Prevent lastName from saving Empty & Null
-                    throw new Exception("Please specify last name!");
+                if (string.IsNullOrWhiteSpace(value))                //Prevent lastName from saving Empty & Null
+                    throw new ArgumentException("Please specify last name!");
                 _lastName = value;
             }
         }
-        public readonly int Id                //properties to read the Id
+        public int Id                //properties to read the Id
         {
             get
             {
                 return _Id;
             }
-         /* set
-            {
-                _Id = value;                //???????????int _Id is a readonly field, how can I solv the problem?
-            }  */
+         
         }
             public override string ToString()
         {
