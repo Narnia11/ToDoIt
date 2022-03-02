@@ -25,8 +25,8 @@ namespace ToDoIt.Models
             set
             {
                
-                if(string.IsNullOrWhiteSpace(value))                //Prevent firstName from saving Empty
-                    throw new ArgumentException("Please specify first name!");
+                if(string.IsNullOrWhiteSpace(value) || value.Length < 2)                //Prevent firstName from saving Empty or having less than 2 letters
+                    throw new ArgumentException("First name must contain at least two letters!");
                 _firstName = value;
             }
         }
@@ -38,8 +38,8 @@ namespace ToDoIt.Models
             }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))                //Prevent lastName from saving Empty & Null
-                    throw new ArgumentException("Please specify last name!");
+                if (string.IsNullOrWhiteSpace(value) || value.Length < 2)                //Prevent lastName from saving Empty or having less than 2 letters
+                    throw new ArgumentException("Last name must contain at least two letters!");
                 _lastName = value;
             }
         }
