@@ -8,7 +8,7 @@ namespace ToDoIt.Models
     {
         private readonly int _id;   //field
         private string _description;  //field 
-        private string _done;   //field
+        private bool _done;   //field
         private Person _assignee;     //field
 
         public Todo(int id, string description)                //costructor
@@ -34,7 +34,7 @@ namespace ToDoIt.Models
                 _description = value;
             }
         }
-        public string done           //properties to read the done
+        public bool done           //properties to read the done
         {
             get
             {
