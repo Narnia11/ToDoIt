@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using ToDoIt.Models;
 namespace ToDoIt.Data
 {
     class PeopleService
     {
-            //Person array not null or empty
-        private static Person[] personArray = new Person[0];      //?????????name of the array? is the aray written correctly?
+        //Person array not null or empty
+        private static Person[] personArray = new Person[0];      
 
         public int Size()             //the method that return the length of the array.
         {
@@ -18,19 +18,30 @@ namespace ToDoIt.Data
         public Person[] FindAll()              //the method that return the Person array.
         {
             return personArray;
+
         }
 
         public Person FindById(int personId)        //that return the person that has a matching personId as the passed in parameter.
         {
-            
-            return Array.Find(personId);           //?????????????
+            foreach (Person person in personArray)
+            {
+                if ( personId == person.Id)
+
+                { return person; }
+
+
+            }
+             return null; 
         }
-
-
-        /*e. Add a method that creates a new Person, adds the newly created object in the array and then return the created object. You have to “expand” the Person array. (tip: send in parameters needed to create the Person object and
-use the PersonSequencer to give a unique personId)*/
-
-
+       
+        public Person AddPerson(string firstName, string lastName)
+        {
+            Person person = new Person(PersonSequencer.NextPersonId(), firstName, lastName);
+            Array.Resize(ref personArray, personArray.Length + 1);     // calling array resize method to increase the size by one
+            personArray[personArray.Length - 1] = person;      // the last index of array person
+            return person;
+        }
+        
         public void Clear()             //the method that clears all Person objects from the Person array.
         {
             Array.Clear(personArray, 0, personArray.Length);

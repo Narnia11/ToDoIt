@@ -16,7 +16,7 @@ namespace ToDoIt.Models
             _firstName = firstName;
             _lastName = lastName;      
         }
-        public string firstName                //properties to read the first name
+        public string FirstName                //properties to read the first name
         {
             get
             {
@@ -30,7 +30,7 @@ namespace ToDoIt.Models
                 _firstName = value;
             }
         }
-        public string lastName                //properties to read the last name
+        public string LastName                //properties to read the last name
         {
             get
             {
@@ -43,7 +43,7 @@ namespace ToDoIt.Models
                 _lastName = value;
             }
         }
-        public int id                //properties to read the id
+        public int Id                //properties to read the id
         {
             get
             {
@@ -53,7 +53,7 @@ namespace ToDoIt.Models
         }
             public override string ToString()
         {
-            return "Id: " + id + "belongs to " + firstName + lastName;
+            return "Id: " + Id + "belongs to " + FirstName + LastName;
         }
     }
 

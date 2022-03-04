@@ -6,13 +6,22 @@ namespace ToDoIt.Data
 {
     class PersonSequencer
     {
-        private static int personId;        
-        static int idCounter = 0;
-        int id;
-        public static int NextPersonId { get { return idCounter; } }
+        private static int personId = 0;        
+        
+
+        public static int NextPersonId()
+        {
+           
+            return ++personId;
+             
+        }
         
         
-        public static int Reset { get { return personId = 0; } }
+        public static void Reset() 
+        {  
+            personId = 0; 
+        } 
+
         
     }
 }

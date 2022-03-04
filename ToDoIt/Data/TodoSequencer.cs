@@ -6,13 +6,21 @@ namespace ToDoIt.Data
 {
     class TodoSequencer
     {
-        private static int todoId;
-        static int idCounter = 0;
-        int id;
-        public static int NextTodoId { get { return idCounter; } }
+        private static int todo = 0;
 
 
-        public static int Reset { get { return todoId = 0; } }
+        public static int NextTodo()
+        {
+
+            return ++todo;
+
+        }
+
+
+        public static void Reset()
+        {
+            todo = 0;
+        }
 
     }
 }

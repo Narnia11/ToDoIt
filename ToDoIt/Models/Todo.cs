@@ -15,7 +15,7 @@ namespace ToDoIt.Models
         {
 
         }
-        public int id           //properties to read the Id
+        public int Id           //properties to read the Id
         {
             get
             {
@@ -23,7 +23,7 @@ namespace ToDoIt.Models
             }
 
         }
-        public string description           //properties to read the description
+        public string Description           //properties to read the description
         {
             get
             {
@@ -34,7 +34,7 @@ namespace ToDoIt.Models
                 _description = value;
             }
         }
-        public bool done           //properties to read the done
+        public bool Done           //properties to read the done
         {
             get
             {
@@ -45,7 +45,7 @@ namespace ToDoIt.Models
                 _done = value;
             }
         }
-        public Person assignee           //properties to read the assignee
+        public Person Assignee           //properties to read the assignee
         {
             get
             {
