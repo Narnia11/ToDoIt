@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToDoIt.Models
 {
-    class Person
+    public class Person
     {
         private readonly int _id;   //field
         private string _firstName;  //field 

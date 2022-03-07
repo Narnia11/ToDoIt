@@ -6,8 +6,7 @@ namespace ToDoIt.Data
 {
     class PeopleService
     {
-        //Person array not null or empty
-        private static Person[] personArray = new Person[0];      
+        private static Person[] personArray = new Person[0];       //Person array not null or empty
 
         public int Size()             //the method that return the length of the array.
         {
@@ -34,11 +33,12 @@ namespace ToDoIt.Data
              return null; 
         }
        
-        public Person AddPerson(string firstName, string lastName)
+        public Person AddPerson(string firstName, string lastName)  //calling Class Person and specify the needed variables of this class to use in this method           
         {
-            Person person = new Person(PersonSequencer.NextPersonId(), firstName, lastName);
-            Array.Resize(ref personArray, personArray.Length + 1);     // calling array resize method to increase the size by one
-            personArray[personArray.Length - 1] = person;      // the last index of array person
+                            //calling Class Person and specify the needed variables of this class to use in this method
+           Person person = new Person(PersonSequencer.NextPersonId(), firstName, lastName);
+            Array.Resize(ref personArray, personArray.Length + 1);     // calling Array.resize method to increase the size by one
+            personArray[personArray.Length - 1] = person;      // the object of the last index of array person 
             return person;
         }
         
